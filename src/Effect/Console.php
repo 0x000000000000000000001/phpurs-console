@@ -1,10 +1,10 @@
 <?php
 
-$log = function($s) { return function() use(&$s) { echo $s . "\n"; }; };
-$warn = function($s) { return function() use(&$s) { file_put_contents('php://stderr', $s . "\n"); }; };
-$error = function($s) { return function() use(&$s) { file_put_contents('php://stderr', $s . "\n"); }; };
-$info = function($s) { return function() use(&$s) { echo $s . "\n"; }; };
-$debug = function($s) { return function() use(&$s) { echo $s . "\n"; }; };
+$log = function($s) { return function() use($s) { echo $s . "\n"; }; };
+$warn = function($s) { return function() use($s) { file_put_contents('php://stderr', $s . "\n"); }; };
+$error = function($s) { return function() use($s) { file_put_contents('php://stderr', $s . "\n"); }; };
+$info = function($s) { return function() use($s) { echo $s . "\n"; }; };
+$debug = function($s) { return function() use($s) { echo $s . "\n"; }; };
 
 $time = function($s) { return function() {}; };
 $timeLog = function($s) { return function() {}; };
